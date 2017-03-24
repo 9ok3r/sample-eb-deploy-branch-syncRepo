@@ -1,0 +1,24 @@
+resources:
+  - name: app-image
+    type: image
+    integration: dockerhub
+    pointer:
+      sourceName: "chetantarale/sampleapp"
+    seed:
+      versionName: latest
+
+  - name: app-version
+    type: version
+    seed:
+      versionName: "0.0.1"
+
+  - name: master-branch
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: 9ok3r/sample-eb-deploy-branch
+      branch: master
+      branches:
+        only:
+          - master
+      buildOnCommit: true

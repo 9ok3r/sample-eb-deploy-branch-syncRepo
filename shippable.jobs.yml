@@ -1,0 +1,23 @@
+jobs:
+  - name: sample-eb-deploy-branch_runCI
+    type: runCI
+    steps:
+      - OUT: app-image
+      - OUT: app-version
+    on_success:
+      - script: echo 'on success !!!!!'
+    on_failure:
+      - script: echo 'Failed job .... :('
+
+  - name: eb-deploy-master
+    type: runCLI
+    steps:
+      - IN: master-branch
+        switch: off
+      - IN: app-version
+      - TASK:
+        - script: printenv
+    on_success:
+      - script: echo 'on success !!!!!'
+    on_failure:
+      - script: echo 'Failed job .... :('
