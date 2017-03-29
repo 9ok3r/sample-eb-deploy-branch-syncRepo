@@ -18,7 +18,7 @@ jobs:
       - IN: app-version
       - TASK:
         - script: printenv
-        - script: ./build/IN/master-branch/gitRepo/build.sh
+        - script: ./IN/master-branch/gitRepo/build.sh
     on_success:
       - script: echo 'on success !!!!!'
     on_failure:
