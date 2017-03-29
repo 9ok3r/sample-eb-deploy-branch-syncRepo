@@ -18,7 +18,7 @@ jobs:
       - IN: app-version
       - TASK:
         - script: printenv
-        - script: cd /build/IN/master-branch/gitRepo && ls && eb init && cat .elasticbeanstalk/config.yml && eb deploy shippableSample-env
+        - script: cd /build/IN/master-branch/gitRepo && ls && git checkout master && eb init && cat .elasticbeanstalk/config.yml && eb deploy shippableSample-env
     on_success:
       - script: echo 'on success !!!!!'
     on_failure:
