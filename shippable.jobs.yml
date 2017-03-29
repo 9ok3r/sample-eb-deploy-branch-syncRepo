@@ -13,7 +13,7 @@ jobs:
     type: runCLI
     steps:
       - IN: master-branch
-      - IN: aws-eb-bits
+      #- IN: aws-eb-bits
         switch: off
       - IN: app-version
       - TASK:
