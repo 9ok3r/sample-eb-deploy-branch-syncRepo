@@ -13,11 +13,13 @@ jobs:
     type: runCLI
     steps:
       - IN: master-branch
+      - IN: aws-eb-bits
         switch: off
       - IN: app-version
       - TASK:
         - script: printenv
-    on_success:
+        - script: cd /build/IN/master-branch/gitRepo && eb deploy
+      on_success:
       - script: echo 'on success !!!!!'
     on_failure:
       - script: echo 'Failed job .... :('
