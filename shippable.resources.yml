@@ -23,8 +23,8 @@ resources:
           - master
       buildOnCommit: true
 
-#  - name: aws-eb-bits
-#    type: cliConfig
-#    integration: aws-eb-bits
-#    pointer:
-#      region: us-west-2
+   - name: aws-eb-bits
+     type: cliConfig
+     integration: aws-eb-bits
+     pointer:
+       region: us-west-2
