@@ -22,3 +22,7 @@ resources:
         only:
           - master
       buildOnCommit: true
+
+  - name: aws-eb-bits
+    type: integration
+    integration: aws-eb-bits
