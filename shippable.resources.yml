@@ -24,5 +24,7 @@ resources:
       buildOnCommit: true
 
   - name: aws-eb-bits
-    type: integration
+    type: cliConfig
     integration: aws-eb-bits
+    pointer:
+      region: us-west-2
