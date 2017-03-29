@@ -19,7 +19,7 @@ jobs:
       - TASK:
         - script: printenv
         - script: cd /build/IN/master-branch/gitRepo && eb deploy
-      on_success:
+    on_success:
       - script: echo 'on success !!!!!'
     on_failure:
       - script: echo 'Failed job .... :('
