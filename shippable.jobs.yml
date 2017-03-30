@@ -1,8 +1,7 @@
 jobs:
-  - name: sample-eb-deploy-branch_runCI
+  - name: sample-eb-deploy_runCI
     type: runCI
     steps:
-      - OUT: app-image
       - OUT: app-version
     on_success:
       - script: echo 'on success !!!!!'
@@ -13,8 +12,8 @@ jobs:
     type: runCLI
     steps:
       - IN: master-branch
-      - IN: aws-eb-bits
         switch: off
+      - IN: aws-eb-bits
       - IN: app-version
       - TASK:
         - script: printenv
